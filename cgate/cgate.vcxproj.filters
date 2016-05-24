@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Header Files\cfg">
+      <UniqueIdentifier>{a7a0ac79-044d-47a8-aa87-70d035573035}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\log">
+      <UniqueIdentifier>{177887d6-24f3-480b-ac18-20872c8344ca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\ex">
+      <UniqueIdentifier>{c5579348-4f35-418c-aa99-f2cb16fce83e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\thread">
+      <UniqueIdentifier>{a178e0a3-d681-4de7-a708-e87fbf07d5ed}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\pattern">
+      <UniqueIdentifier>{14750688-63b1-48ea-8bcb-e042b8239838}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\cfg">
+      <UniqueIdentifier>{0914ee91-08db-4db4-a0a5-3bade74f9dfb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\log">
+      <UniqueIdentifier>{69048bfe-6990-4355-8bce-f794dbe52536}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\thread">
+      <UniqueIdentifier>{e0fc1b61-9ee8-455c-9c31-cf3371c48e30}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\cgate\cfg\config.hpp">
+      <Filter>Header Files\cfg</Filter>
+    </ClInclude>
+    <ClInclude Include="include\cgate\strext.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\cgate\log\console_logger.hpp">
+      <Filter>Header Files\log</Filter>
+    </ClInclude>
+    <ClInclude Include="include\cgate\log\file_logger.hpp">
+      <Filter>Header Files\log</Filter>
+    </ClInclude>
+    <ClInclude Include="include\cgate\log\ilogger.hpp">
+      <Filter>Header Files\log</Filter>
+    </ClInclude>
+    <ClInclude Include="include\cgate\log\level.hpp">
+      <Filter>Header Files\log</Filter>
+    </ClInclude>
+    <ClInclude Include="include\cgate\log\logger_factory.hpp">
+      <Filter>Header Files\log</Filter>
+    </ClInclude>
+    <ClInclude Include="include\cgate\ex\duplicate.hpp">
+      <Filter>Header Files\ex</Filter>
+    </ClInclude>
+    <ClInclude Include="include\cgate\ex\file_open.hpp">
+      <Filter>Header Files\ex</Filter>
+    </ClInclude>
+    <ClInclude Include="include\cgate\ex\file_read.hpp">
+      <Filter>Header Files\ex</Filter>
+    </ClInclude>
+    <ClInclude Include="include\cgate\ex\file_write.hpp">
+      <Filter>Header Files\ex</Filter>
+    </ClInclude>
+    <ClInclude Include="include\cgate\ex\icontainer.hpp">
+      <Filter>Header Files\ex</Filter>
+    </ClInclude>
+    <ClInclude Include="include\cgate\ex\iexception.hpp">
+      <Filter>Header Files\ex</Filter>
+    </ClInclude>
+    <ClInclude Include="include\cgate\ex\ifile.hpp">
+      <Filter>Header Files\ex</Filter>
+    </ClInclude>
+    <ClInclude Include="include\cgate\ex\isystem.hpp">
+      <Filter>Header Files\ex</Filter>
+    </ClInclude>
+    <ClInclude Include="include\cgate\ex\not_found.hpp">
+      <Filter>Header Files\ex</Filter>
+    </ClInclude>
+    <ClInclude Include="include\cgate\ex\thread.hpp">
+      <Filter>Header Files\ex</Filter>
+    </ClInclude>
+    <ClInclude Include="include\cgate\thread\irunnable.hpp">
+      <Filter>Header Files\thread</Filter>
+    </ClInclude>
+    <ClInclude Include="include\cgate\thread\thread.hpp">
+      <Filter>Header Files\thread</Filter>
+    </ClInclude>
+    <ClInclude Include="include\cgate\thread\thread_factory.hpp">
+      <Filter>Header Files\thread</Filter>
+    </ClInclude>
+    <ClInclude Include="include\cgate\pattern\ifactory.hpp">
+      <Filter>Header Files\pattern</Filter>
+    </ClInclude>
+    <ClInclude Include="include\cgate\pattern\imanager.hpp">
+      <Filter>Header Files\pattern</Filter>
+    </ClInclude>
+    <ClInclude Include="include\cgate\pattern\iobservable.hpp">
+      <Filter>Header Files\pattern</Filter>
+    </ClInclude>
+    <ClInclude Include="include\cgate\pattern\iobserver.hpp">
+      <Filter>Header Files\pattern</Filter>
+    </ClInclude>
+    <ClInclude Include="include\cgate\export.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\cfg\config.cpp">
+      <Filter>Source Files\cfg</Filter>
+    </ClCompile>
+    <ClCompile Include="src\log\console_logger.cpp">
+      <Filter>Source Files\log</Filter>
+    </ClCompile>
+    <ClCompile Include="src\log\file_logger.cpp">
+      <Filter>Source Files\log</Filter>
+    </ClCompile>
+    <ClCompile Include="src\log\ilogger.cpp">
+      <Filter>Source Files\log</Filter>
+    </ClCompile>
+    <ClCompile Include="src\log\logger_factory.cpp">
+      <Filter>Source Files\log</Filter>
+    </ClCompile>
+    <ClCompile Include="src\thread\thread.cpp">
+      <Filter>Source Files\thread</Filter>
+    </ClCompile>
+    <ClCompile Include="src\thread\thread_factory.cpp">
+      <Filter>Source Files\thread</Filter>
+    </ClCompile>
+    <ClCompile Include="src\strext.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
