@@ -4,5 +4,4 @@ cgate/x86/*
 Skeleton/x64/*
 Skeleton/x86/*
 
-x64/*
-x86/*
+bin/*
