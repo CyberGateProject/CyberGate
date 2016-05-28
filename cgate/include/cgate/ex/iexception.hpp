@@ -26,11 +26,11 @@ namespace cgate
             /// @brief
             ///
             /// @return
-            virtual const char*
+            virtual const char *
             what() const noexcept
             {
                 return m_message.c_str();
-            } /* end of : virtual const char*
+            } /* end of : virtual const char *
                           what() const noexcept */
 
         protected:

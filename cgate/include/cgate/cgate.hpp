@@ -1,0 +1,47 @@
+#pragma once
+
+#include "cgate/export.hpp"
+#include "cgate/core/strext.hpp"
+
+#include "cgate/core/cfg/config.hpp"
+
+#include "cgate/core/log/console_logger.hpp"
+#include "cgate/core/log/file_logger.hpp"
+#include "cgate/core/log/ilogger.hpp"
+#include "cgate/core/log/log_level.hpp"
+#include "cgate/core/log/logger_factory.hpp"
+
+#include "cgate/core/pattern/ifactory.hpp"
+#include "cgate/core/pattern/imanager.hpp"
+#include "cgate/core/pattern/iobservable.hpp"
+#include "cgate/core/pattern/iobserver.hpp"
+
+#include "cgate/core/stream/console_stream.hpp"
+#include "cgate/core/stream/constant_memory_stream.hpp"
+#include "cgate/core/stream/file_stream.hpp"
+#include "cgate/core/stream/istream.hpp"
+#include "cgate/core/stream/memory_stream.hpp"
+#include "cgate/core/stream/path.hpp"
+#include "cgate/core/stream/stream_seek_type.hpp"
+
+#include "cgate/core/thread/condition.hpp"
+#include "cgate/core/thread/irunnable.hpp"
+#include "cgate/core/thread/mutex.hpp"
+#include "cgate/core/thread/semaphore.hpp"
+#include "cgate/core/thread/thread.hpp"
+#include "cgate/core/thread/thread_factory.hpp"
+
+#include "cgate/ex/condition.hpp"
+#include "cgate/ex/duplicate.hpp"
+#include "cgate/ex/icontainer.hpp"
+#include "cgate/ex/iexception.hpp"
+#include "cgate/ex/istream.hpp"
+#include "cgate/ex/isystem.hpp"
+#include "cgate/ex/ithreading.hpp"
+#include "cgate/ex/mutex.hpp"
+#include "cgate/ex/not_found.hpp"
+#include "cgate/ex/semaphore.hpp"
+#include "cgate/ex/stream_open.hpp"
+#include "cgate/ex/stream_read.hpp"
+#include "cgate/ex/stream_write.hpp"
+#include "cgate/ex/thread.hpp"

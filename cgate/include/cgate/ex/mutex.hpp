@@ -8,19 +8,19 @@ namespace cgate
     namespace ex
     {
         /// @brief
-        class Thread : public IThreading
+        class Mutex : public IThreading
         {
         public:
             /// @brief
             ///
             /// @param message
-            Thread(const std::string message = "Thread error") noexcept
+            Mutex(const std::string message = "Mutex error") noexcept
                 : IThreading{message}
             {
 
-            } /* end of : Thread(const std::string message) noexcept */
+            } /* end of : Mutex(const std::string message) noexcept */
 
-        }; // end of : class Thread
+        }; // end of : class Mutex
 
     } // end of : namespace ex
 

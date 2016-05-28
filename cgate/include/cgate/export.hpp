@@ -1,8 +1,8 @@
 #pragma once
 
-#include "SFML/Config.hpp"
+#include "SDL2/SDL_platform.h"
 
-#if defined(SFML_SYSTEM_WINDOWS)
+#if defined(__WINDOWS__)
 
     // Windows compilers need specific (and different) keywords for export and import
     #define CGATE_API_EXPORT __declspec(dllexport)

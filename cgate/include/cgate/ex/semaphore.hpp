@@ -8,19 +8,19 @@ namespace cgate
     namespace ex
     {
         /// @brief
-        class Thread : public IThreading
+        class Semaphore : public IThreading
         {
         public:
             /// @brief
             ///
             /// @param message
-            Thread(const std::string message = "Thread error") noexcept
+            Semaphore(const std::string message = "Semaphore error") noexcept
                 : IThreading{message}
             {
 
-            } /* end of : Thread(const std::string message) noexcept */
+            } /* end of : Semaphore(const std::string message) noexcept */
 
-        }; // end of : class Thread
+        }; // end of : class Semaphore
 
     } // end of : namespace ex
 
