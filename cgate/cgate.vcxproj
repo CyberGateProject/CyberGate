@@ -25,13 +25,13 @@
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v140</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v140</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
@@ -44,7 +44,7 @@
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v140</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
@@ -68,25 +68,48 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
-  <PropertyGroup />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(SolutionDir)bin\vs\x86\$(Configuration)\</OutDir>
+    <IntDir>x86\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>$(SolutionDir)bin\vs\x64\$(Configuration)\</OutDir>
+    <IntDir>x64\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>$(SolutionDir)bin\vs\x64\$(Configuration)\</OutDir>
+    <IntDir>x64\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>$(SolutionDir)bin\vs\x86\$(Configuration)\</OutDir>
+    <IntDir>x86\$(Configuration)\</IntDir>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>.\include;..\external\SDL2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>CGATE_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>..\external\SDL2\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>SDL2.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <SubSystem>NotSet</SubSystem>
+    </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>E:\CyberGate\cgate\include;E:\CyberGate\external\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.\include;..\external\SDL2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>CGATE_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
-      <AdditionalLibraryDirectories>E:\CyberGate\external\x64\libs;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>sfml-system-d.lib;sfml-graphics-d.lib;sfml-window-d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\external\SDL2\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>SDL2.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <SubSystem>NotSet</SubSystem>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -96,10 +119,14 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>.\include;..\external\SDL2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>CGATE_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>..\external\SDL2\lib\x86</AdditionalLibraryDirectories>
+      <AdditionalDependencies>SDL2.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -109,48 +136,75 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>.\include;..\external\SDL2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>CGATE_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>..\external\SDL2\lib\x64;</AdditionalLibraryDirectories>
+      <AdditionalDependencies>SDL2.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="include\cgate\cfg\config.hpp" />
-    <ClInclude Include="include\cgate\export.hpp" />
+    <ClInclude Include="include\cgate\cgate.hpp" />
+    <ClInclude Include="include\cgate\core\cfg\config.hpp" />
+    <ClInclude Include="include\cgate\core\log\console_logger.hpp" />
+    <ClInclude Include="include\cgate\core\log\file_logger.hpp" />
+    <ClInclude Include="include\cgate\core\log\ilogger.hpp" />
+    <ClInclude Include="include\cgate\core\log\log_level.hpp" />
+    <ClInclude Include="include\cgate\core\log\logger_factory.hpp" />
+    <ClInclude Include="include\cgate\core\pattern\ifactory.hpp" />
+    <ClInclude Include="include\cgate\core\pattern\imanager.hpp" />
+    <ClInclude Include="include\cgate\core\pattern\iobservable.hpp" />
+    <ClInclude Include="include\cgate\core\pattern\iobserver.hpp" />
+    <ClInclude Include="include\cgate\core\stream\console_stream.hpp" />
+    <ClInclude Include="include\cgate\core\stream\constant_memory_stream.hpp" />
+    <ClInclude Include="include\cgate\core\stream\file_stream.hpp" />
+    <ClInclude Include="include\cgate\core\stream\istream.hpp" />
+    <ClInclude Include="include\cgate\core\stream\memory_stream.hpp" />
+    <ClInclude Include="include\cgate\core\stream\path.hpp" />
+    <ClInclude Include="include\cgate\core\stream\stream_seek_type.hpp" />
+    <ClInclude Include="include\cgate\core\strext.hpp" />
+    <ClInclude Include="include\cgate\core\thread\condition.hpp" />
+    <ClInclude Include="include\cgate\core\thread\irunnable.hpp" />
+    <ClInclude Include="include\cgate\core\thread\mutex.hpp" />
+    <ClInclude Include="include\cgate\core\thread\semaphore.hpp" />
+    <ClInclude Include="include\cgate\core\thread\thread.hpp" />
+    <ClInclude Include="include\cgate\core\thread\thread_factory.hpp" />
+    <ClInclude Include="include\cgate\ex\condition.hpp" />
     <ClInclude Include="include\cgate\ex\duplicate.hpp" />
-    <ClInclude Include="include\cgate\ex\file_open.hpp" />
-    <ClInclude Include="include\cgate\ex\file_read.hpp" />
-    <ClInclude Include="include\cgate\ex\file_write.hpp" />
+    <ClInclude Include="include\cgate\ex\stream_open.hpp" />
+    <ClInclude Include="include\cgate\ex\stream_read.hpp" />
+    <ClInclude Include="include\cgate\ex\stream_write.hpp" />
     <ClInclude Include="include\cgate\ex\icontainer.hpp" />
     <ClInclude Include="include\cgate\ex\iexception.hpp" />
-    <ClInclude Include="include\cgate\ex\ifile.hpp" />
+    <ClInclude Include="include\cgate\ex\istream.hpp" />
     <ClInclude Include="include\cgate\ex\isystem.hpp" />
+    <ClInclude Include="include\cgate\ex\ithreading.hpp" />
+    <ClInclude Include="include\cgate\ex\mutex.hpp" />
     <ClInclude Include="include\cgate\ex\not_found.hpp" />
+    <ClInclude Include="include\cgate\ex\semaphore.hpp" />
     <ClInclude Include="include\cgate\ex\thread.hpp" />
-    <ClInclude Include="include\cgate\log\console_logger.hpp" />
-    <ClInclude Include="include\cgate\log\file_logger.hpp" />
-    <ClInclude Include="include\cgate\log\ilogger.hpp" />
-    <ClInclude Include="include\cgate\log\level.hpp" />
-    <ClInclude Include="include\cgate\log\logger_factory.hpp" />
-    <ClInclude Include="include\cgate\pattern\ifactory.hpp" />
-    <ClInclude Include="include\cgate\pattern\imanager.hpp" />
-    <ClInclude Include="include\cgate\pattern\iobservable.hpp" />
-    <ClInclude Include="include\cgate\pattern\iobserver.hpp" />
-    <ClInclude Include="include\cgate\strext.hpp" />
-    <ClInclude Include="include\cgate\thread\irunnable.hpp" />
-    <ClInclude Include="include\cgate\thread\thread.hpp" />
-    <ClInclude Include="include\cgate\thread\thread_factory.hpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\cfg\config.cpp" />
-    <ClCompile Include="src\log\console_logger.cpp" />
-    <ClCompile Include="src\log\file_logger.cpp" />
-    <ClCompile Include="src\log\ilogger.cpp" />
-    <ClCompile Include="src\log\logger_factory.cpp" />
-    <ClCompile Include="src\strext.cpp" />
-    <ClCompile Include="src\thread\thread.cpp" />
-    <ClCompile Include="src\thread\thread_factory.cpp" />
+    <ClCompile Include="src\core\cfg\config.cpp" />
+    <ClCompile Include="src\core\log\console_logger.cpp" />
+    <ClCompile Include="src\core\log\file_logger.cpp" />
+    <ClCompile Include="src\core\log\ilogger.cpp" />
+    <ClCompile Include="src\core\log\logger_factory.cpp" />
+    <ClCompile Include="src\core\stream\console_stream.cpp" />
+    <ClCompile Include="src\core\stream\constant_memory_stream.cpp" />
+    <ClCompile Include="src\core\stream\file_stream.cpp" />
+    <ClCompile Include="src\core\stream\istream.cpp" />
+    <ClCompile Include="src\core\stream\memory_stream.cpp" />
+    <ClCompile Include="src\core\stream\path.cpp" />
+    <ClCompile Include="src\core\strext.cpp" />
+    <ClCompile Include="src\core\thread\condition.cpp" />
+    <ClCompile Include="src\core\thread\mutex.cpp" />
+    <ClCompile Include="src\core\thread\semaphore.cpp" />
+    <ClCompile Include="src\core\thread\thread.cpp" />
+    <ClCompile Include="src\core\thread\thread_factory.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
